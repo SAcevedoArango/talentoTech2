@@ -1,9 +1,8 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejercicio {
     
-    public static void enterGrades() throws InputMismatchException {
+    public static void enterGrades() throws Exception {
         Scanner groupsNumberInput = new Scanner (System.in);
         System.out.println("Ingrese el número de cursos: ");
         int numberGroups = groupsNumberInput.nextInt();
@@ -12,14 +11,14 @@ public class Ejercicio {
         System.out.println("Ingrese el número de estudiantes por curso: ");
         int numberStudents = studentsNumberInput.nextInt();
 
-        int grades[][] = new int [numberGroups][numberStudents];
+        float grades[][] = new float [numberGroups][numberStudents];
         System.out.println("Ahora ingresarás las notas de los estudiantes de cada curso.");
 
         for (int i = 0; i < grades.length; i++) {
             for (int j = 0; j < grades[i].length; j++) { 
                 System.out.println("Ingresa la nota del estudiante: " + (j+1) + " en el curso " + (i+1));
                 Scanner gradesIterative = new Scanner(System.in);
-                grades[i][j] = gradesIterative.nextInt();
+                grades[i][j] = gradesIterative.nextFloat();
 
             }  
         }
@@ -36,7 +35,7 @@ public class Ejercicio {
             System.out.println("¿De qué estudiante desea saber el promedio de sus notas?");
             Scanner studentInput = new Scanner(System.in);
             int studentId = studentInput.nextInt();
-            int averageStudent[] = new int[grades.length];
+            float averageStudent[] = new float[grades.length];
             for (int i = 0; i < grades.length; i++) {
                 averageStudent[i] = grades[i][studentId - 1];
             }
@@ -82,10 +81,8 @@ public class Ejercicio {
     public static void main(String[] args) {
         try {
             enterGrades();
-        } catch (InputMismatchException e) {
-            System.out.println("Eso no es un número");
         } catch (Exception e) {
-            System.out.println("Hubo un error");
+            System.out.println("Eso no es un número");
         }
         
         
