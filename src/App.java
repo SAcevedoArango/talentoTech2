@@ -18,7 +18,7 @@ public class App {
 
         int numbers[] = new int[5];
         int numbers2[] = {3, 5, 6, 7, 8, 9};
-        int matrix[][][] = new int {{{1, 2, 3}, {4, 5, 6}}};
+        int matrix[][][] = new int[][][] {{{1, 2, 3}, {4, 5, 6}}};
         for (i = 0; i < numbers2.length; i++) {
             //numbers[i] = i + 1;
             System.out.println(numbers2[i]);
