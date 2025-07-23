@@ -36,4 +36,8 @@ public class Point { //Práctica de creación de clases
         double distance = Math.sqrt(value);
         return distance;
     }
+
+    public double calculateSlope(Point p2) {
+        return (p2.y - this.y) / (p2.x - this.x);
+    }
 }
