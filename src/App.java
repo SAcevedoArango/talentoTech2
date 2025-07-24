@@ -1,5 +1,9 @@
+import co.udea.bootcamp.classes.figure.Circle; // Solo para practicar la importación de clases.
+
 public class App {
     public static void main(String[] args) throws Exception {
+        
+        Circle circle1 = new Circle(); // Solo para practicar la importación de clases.
         int i = 0;
         System.out.println(i++); //modifica la variable después de imprimirla/usarla
         System.out.println(i);
