@@ -70,6 +70,8 @@ public class GradesClass {
         System.out.println("3 para saber cuántos estudiantes ganaron y perdieron un curso determinado.");
         Scanner menuScanner = new Scanner(System.in);
         int optionSelected = menuScanner.nextInt();
+
+        //Para corregir avertencia de not closed scanner - crear una sola instancia del Scanner (como atributo)
         
         switch (optionSelected) {
             case 1:

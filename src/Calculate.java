@@ -55,12 +55,12 @@ public class Calculate {
         this.numberPoints = pointsInput.nextInt();
         this.pointsObj = new Point[this.numberPoints];
         System.out.println("Evaluaremos: " + this.numberPoints + " puntos.");
-        Point genericPoint = new Point();
-        
+        //for (int k = 0; k)
 
-        for (int i = 0; i < this.pointsObj.length; i++) { //Problema al querer popular el array pointsObj, todas las posiciones quedan igual al último x, y.
+        for (int i = 0; i < this.pointsObj.length; i++) { //Ahora el problema es que no coinciden los valores con los que estoy ingresando
             for(int j = 0; j < 2; j++) {
-            this.pointsObj[i] = genericPoint;
+                Point genericPoint = new Point();
+                this.pointsObj[i] = genericPoint;
                 if (j % 2 == 0) {
                     System.out.println("Ahora ingresa la coordenada X del punto " + (i));
                     Scanner xInput = new Scanner(System.in);
