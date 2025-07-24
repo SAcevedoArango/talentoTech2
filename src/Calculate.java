@@ -55,61 +55,30 @@ public class Calculate {
         this.numberPoints = pointsInput.nextInt();
         this.pointsObj = new Point[this.numberPoints];
         System.out.println("Evaluaremos: " + this.numberPoints + " puntos.");
-        //for (int k = 0; k)
+        
+        for (int k = 0; k < this.pointsObj.length; k++) { // Solución al problema 1.2
+            Point genericPoint = new Point();
+            this.pointsObj[k] = genericPoint;
+        }
+        
 
-        for (int i = 0; i < this.pointsObj.length; i++) { //Ahora el problema es que no coinciden los valores con los que estoy ingresando
+        for (int i = 0; i < this.pointsObj.length; i++) { //Ahora el problema (1.2) es que no coinciden los valores con los que estoy ingresando
             for(int j = 0; j < 2; j++) {
-                Point genericPoint = new Point();
-                this.pointsObj[i] = genericPoint;
+                //Point genericPoint = new Point();
+                //this.pointsObj[i] = genericPoint;
                 if (j % 2 == 0) {
-                    System.out.println("Ahora ingresa la coordenada X del punto " + (i));
+                    System.out.println("Ahora ingresa la coordenada X del punto " + (i + 1));
                     Scanner xInput = new Scanner(System.in);
                     double xPoint = xInput.nextDouble();
                     this.pointsObj[i].setX(xPoint);
                 } else {
-                    System.out.println("Ahora ingresa la coordenada Y del punto " + (i));
+                    System.out.println("Ahora ingresa la coordenada Y del punto " + (i + 1));
                     Scanner yInput = new Scanner(System.in);
                     double yPoint = yInput.nextDouble();
                     this.pointsObj[i].setY(yPoint);
                 }
-            
             }
         }
-        
     }   
-        
-    public static void getFarPoints(Point[] pointsObj) {
-        //double minDis = 0;
-        //double minPair[] = new double[2];
-        double maxDist = 0;
-        double minDist = 8.0f/0;
-        double[] maxPair = new double[2];
-        double[] minPair = new double[2];
-        for (int i = 0; i < pointsObj.length; i++) {
-            double x1 = pointsObj[i].getX();
-            double x2 = pointsObj[i + 1].getX();
-            double y1 = pointsObj[i].getY();
-            double y2 = pointsObj[i + 1].getY();
-            if (x1 == x2 && y1 == y2) {
-                continue;
-            }
-            double dist = Math.sqrt(Math.pow(y2 - y1, 2) + Math.pow(x2 - x1, 2));
-            if (dist > maxDist) {
-                maxDist = dist;
-                maxPair[0] = i;
-                maxPair[1] = (i + 1);
-            }
-            if (dist < minDist) {
-                minDist = dist;
-                minPair[0] = i;
-                minPair[1] = (i + 1);
-            }
-        }
-        System.out.println("La mayor distancia es entre los puntos " + maxPair[0] +
-                " y " + maxPair[1] + ": " + maxDist);
-        System.out.println("La menor distancia es entre los puntos " + minPair[0] +
-                " y " + minPair[1] + ": " + minDist);   
-
-    }
 
 }
