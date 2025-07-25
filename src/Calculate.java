@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,6 +8,7 @@ public class Calculate {
     private double intercept;
     private int numberPoints;
     private Point[] pointsObj;
+    // private ArrayList<Point> pointsList;
 
     public double getSlope() {
         return slope;

@@ -5,7 +5,7 @@ package co.udea.bootcamp.classes.figure;
 public abstract class Figure { // Abstracción
     // Attributes
     private double area; // Herencia
-    private double perimeter;
+    private double perimeter; // Private solo le permite a esta clase acceder a los atributos.
     private String color;
     
     //Methods

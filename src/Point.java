@@ -40,4 +40,19 @@ public class Point { //Práctica de creación de clases
     public double calculateSlope(Point p2) {
         return (p2.y - this.y) / (p2.x - this.x);
     }
+
+    @Override
+    public String toString() {
+        return "Point [x=" + x + ", y=" + y + "]";
+    }
+
+    @Override
+    protected Point clone() {
+        Point point = new Point();
+        point.setX(this.x);
+        point.setY(this.y);
+        return point;
+    }
+    
+    
 }

@@ -1,24 +1,21 @@
 package co.udea.bootcamp.classes.figure;
 
-public class Square extends Figure { // Herencia
+public class Square extends Rectangle { // Herencia
     // Attributes
-    private double side;
-    private double base;
     
     // Methods
     public double getSide() {
-        return side;
-    }
-    public double getBase() {
-        return base;
+        return this.base;
     }
     public void setSide(double side) {
-        this.side = side;
+        this.base = side;
     }
+    @Override
     public double getPerimeter() {
-        return this.side * 4;
+        return this.base * 4;
     }
+    @Override
     public double getArea() {
-        return this.side * this.side;
+        return this.base * this.base;
     }
 }

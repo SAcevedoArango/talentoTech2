@@ -24,9 +24,11 @@ public class Triangle extends Figure{ // Herencia
     public double getSide3() {
         return side3;
     }
+    @Override
     public double getArea() {
         return (this.base * this.heigth) / 2;
     }
+    @Override
     public double getPerimeter() {
         return this.side1 + this.side2 + this.side3;
     }
