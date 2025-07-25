@@ -8,7 +8,7 @@ public class Calculate {
     private double intercept;
     private int numberPoints;
     private Point[] pointsObj;
-    // private ArrayList<Point> pointsList;
+    private ArrayList<Point> pointsList;
 
     public double getSlope() {
         return slope;
@@ -21,7 +21,10 @@ public class Calculate {
     }
     public Point[] getPointsObj() {
         return pointsObj;
-    }    
+    }
+    public ArrayList<Point> getPointsList() {
+        return pointsList;
+    }   
 
     public void setSlope(double slope) {
         this.slope = slope;
@@ -35,6 +38,9 @@ public class Calculate {
     public void setPointsObj(Point[] pointsObj) {
         this.pointsObj = pointsObj;
     }
+    public void setPointsList(ArrayList<Point> pointsList) {
+        this.pointsList = pointsList;
+    }  
     //Constructores
     public Calculate() {
         this.slope = 0;
@@ -55,16 +61,17 @@ public class Calculate {
         System.out.println("Ingresa cuántos puntos vamos a evaluar: ");
         Scanner pointsInput = new Scanner(System.in);
         this.numberPoints = pointsInput.nextInt();
-        this.pointsObj = new Point[this.numberPoints];
+        //this.pointsObj = new Point[this.numberPoints];
+        this.pointsList = new ArrayList<Point>();
         System.out.println("Evaluaremos: " + this.numberPoints + " puntos.");
         
-        for (int k = 0; k < this.pointsObj.length; k++) { // Solución al problema 1.2
+        for (int k = 0; k < this.numberPoints; k++) { // Solución al problema 1.2
             Point genericPoint = new Point();
-            this.pointsObj[k] = genericPoint;
+            this.pointsList.add(genericPoint);
         }
         
 
-        for (int i = 0; i < this.pointsObj.length; i++) { //Ahora el problema (1.2) es que no coinciden los valores con los que estoy ingresando
+        for (int i = 0; i < this.pointsList.size(); i++) { 
             for(int j = 0; j < 2; j++) {
                 //Point genericPoint = new Point();
                 //this.pointsObj[i] = genericPoint;
@@ -72,12 +79,12 @@ public class Calculate {
                     System.out.println("Ahora ingresa la coordenada X del punto " + (i + 1));
                     Scanner xInput = new Scanner(System.in);
                     double xPoint = xInput.nextDouble();
-                    this.pointsObj[i].setX(xPoint);
+                    this.pointsList.get(i).setX(xPoint);
                 } else {
                     System.out.println("Ahora ingresa la coordenada Y del punto " + (i + 1));
                     Scanner yInput = new Scanner(System.in);
                     double yPoint = yInput.nextDouble();
-                    this.pointsObj[i].setY(yPoint);
+                    this.pointsList.get(i).setY(yPoint);
                 }
             }
         }
